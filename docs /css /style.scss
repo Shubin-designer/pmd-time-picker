@@ -1,0 +1,269 @@
+@import 'common/variables.scss';
+@import 'common/normalize.scss';
+@import 'common/global.scss';
+
+$max-width: 800px;
+
+// ------------------------
+// Base
+// ------------------------
+
+body {
+	background: white;
+	color: #333;
+	font-family: $font-main;
+}
+
+.hljs {
+	border-radius: 2px;
+	overflow: hidden;
+	padding: 14px 20px 18px !important;
+	margin-bottom: 24px;
+}
+
+pre code {
+	overflow-x: auto !important;
+}
+
+// ------------------------
+// Common
+// ------------------------
+
+.text {
+	font-size: 1.6rem;
+	line-height: 2.6rem;
+	margin: 14px 0;
+
+	code {
+		background: rgba($blue1, 0.5);
+		border-radius: 2px;
+		display: inline-block;
+		padding: 0 4px;
+		font-family: $font-monospace;
+		font-size: 1.4rem;
+	}
+
+	a {
+		color: $blue3;
+		transition: color 0.2s ease;
+		text-decoration: none;
+
+		&:hover {
+			color: darken($blue3, 10%);
+		}
+	}
+}
+
+// ------------------------
+// Sections
+// ------------------------
+
+.docs-section {
+	max-width: $max-width;
+	margin: 0 auto;
+	padding: 40px 0;
+
+	@include mq(max, $max-width + 40px) {
+		padding: 0 1em;
+	}
+
+	h2 {
+		font-family: $font-alt;
+		font-weight: 400;
+		color: $blue3;
+		font-size: 2.4rem;
+	}
+}
+
+// ------------------------
+// Intro
+// ------------------------
+
+.intro-demo {
+	min-height: 100vh;
+	padding: 38px 1em;
+	border-bottom: 9px solid $blue1;
+	width: 100%;
+
+	h1 {
+		margin: 0.5em 0;
+		font-family: $font-main;
+		text-align: center;
+		font-size: 5.6rem;
+		line-height: 1;
+		color: $blue2;
+	}
+}
+
+.intro-description {
+	text-align: center;
+	font-size: 1.6rem;
+	margin-top: 14px;
+	color: #868686;
+
+	a {
+		border-bottom: 1px solid #535353;
+	}
+}
+
+.action-buttons {
+	text-align: center;
+	margin-top: 26px;
+	$color: #aaa;
+
+	a {
+		display: inline-block;
+		min-width: 132px;
+		border-radius: 3px;
+		transition: 0.15s ease;
+		border: 2px solid #d4d4d4;
+		padding: 8px 18px;
+		font-size: 1.6rem;
+		font-weight: bold;
+		color: $color;
+
+		svg {
+			fill: $color;
+			transition: 0.15s ease;
+			vertical-align: -4px;
+			margin-right: 5px;
+		}
+
+		&:first-child {
+			margin-right: 14px;
+		}
+
+		&:hover {
+			border-color: $blue1;
+			color: $blue2;
+
+			svg {
+				fill: $blue2;
+			}
+		}
+	}
+}
+
+.intro-demo-wrapper {
+	text-align: center;
+	min-height: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 80px;
+	border-radius: 3px;
+}
+
+.selected-demo-time {
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	display: block;
+	padding-top: 60px;
+	cursor: pointer;
+	color: #b5b5b5;
+
+	strong {
+		color: $blue2;
+		display: block;
+		font-size: 2.8rem;
+		margin-top: 4px;
+		transition: 0.15s ease;
+
+		&:hover {
+			color: darken($blue1, 5%);
+		}
+	}
+
+	&__hint {
+		font-size: 1.2rem;
+		margin-top: 4px;
+		display: block;
+		color: #9b9b9b;
+	}
+}
+
+.intro-demo-picker {
+	display: inline-block;
+	text-align: left;
+	min-height: 420px;
+
+	&__wrapper {
+		animation: 0.3s ease fadeIn;
+	}
+}
+
+// ------------------------
+// API
+// ------------------------
+
+.api {
+	&__description {
+		margin-bottom: 36px;
+	}
+}
+
+.h3-api {
+	font-weight: 400;
+	font-family: $font-main;
+
+	.name {
+		background: rgba($blue1, 0.5);
+		border-radius: 2px;
+		display: inline-block;
+		padding: 2px 8px 3px;
+		margin-right: 4px;
+		font-family: $font-monospace;
+	}
+
+	.accepts {
+		font-style: italic;
+		font-weight: bold;
+		margin-right: 4px;
+		user-select: none;
+	}
+
+	.default {
+		border-radius: 2px;
+		font-size: 1.3rem;
+		background: #ddd;
+		padding: 1px 4px;
+	}
+}
+
+// ------------------------
+// Examples
+// ------------------------
+
+.examples {
+	&__item:not(:first-of-type) {
+		padding-top: 44px;
+		margin-top: 60px;
+		border-top: 1px solid $blue1;
+	}
+
+	&__example-1,
+	&__example-2,
+	&__example-3 {
+		padding: 20px 0;
+
+		&-timekeeper-wrapper {
+			margin: 0 auto;
+			width: 260px;
+		}
+
+		&-time {
+			display: block;
+			text-align: center;
+			margin-top: 20px;
+		}
+	}
+
+	&__example-2-open {
+		display: block;
+		cursor: pointer;
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-top: 4px;
+	}
+}
