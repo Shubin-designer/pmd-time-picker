@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# Build output
+lib/
+docs/build/
+
+# System files
+.DS_Store
+.awcache/
+
+# Temp/testing
+z_old/
+z_temp/
+todo.md
