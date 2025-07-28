@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="language" content="EN">
+
+	<title>React Timekeeper</title>
+	<meta name="description" content="Google Keep app inspired time picker for React.">
+	<meta property="og:url" content="https://catc.github.io/react-timekeeper">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="React Timekeeper">
+	<meta property="og:description" content="Time picker based on the style of the Google Keep app.">
+	<meta property="og:image" content="https://avatars0.githubusercontent.com/u/5651132?v=3&s=460">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700|Roboto+Condensed:400,700|Roboto+Mono">
+	<link rel="stylesheet" href="./build/style.css">
+</head>
+
+<body>
+	<div id="root"></div>
+
+	<script>
+		// Disable styles when running on localhost (handled by style-loader in dev)
+		if (location.hostname === 'localhost') {
+			[].forEach.call(document.styleSheets, s => {
+				if (s.href && s.href.includes('build')) {
+					s.disabled = true;
+				}
+			});
+		}
+	</script>
+
+	<script src="./build/bundle.js"></script>
+</body>
+
+</html>
